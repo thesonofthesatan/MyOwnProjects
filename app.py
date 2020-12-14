@@ -1,32 +1,27 @@
-import random
+try:
+    inp_1 = int(input("How many numbers you want to add to the list: "))
+    numbers = []
 
-fun_factor = random.randint(0, 100)
+    while inp_1 != 0:
+        inp_2 = int(input("Enter number: "))
+        numbers.append(inp_2)
+        inp_1 = inp_1 - 1
+    print("\nThe numbers you added are: " + str(numbers))
 
+    print("\nFor add +, for multiply *")
+    operator = input("Enter what operator you want to add: ")
 
-def looping(string):
-    for mayur in range(fun_factor):
-        r_fact = random.randint(0, 5)
-        P = ["      ", "         ", "     ", "-", "--", "---"]
-        S = str(P[r_fact])
-        print(S + " | ")
-        if r_fact == 3:
-            print("       " + S)
+    if operator == "+":
+        print("Answer for addition: " + str(sum(numbers)))
 
+    elif operator == "*":
+        def multiply():
+            result = 1
+            for x in numbers:
+                result = result * x
+            return result
 
-def looping_2(string):
-    Z = fun_factor
-    while Z != 0:
-        r_fact = random.randint(0, 5)
-        P = ["      ", "         ", "     ", "-", "--", "---"]
-        S = str(P[r_fact])
-        Z = Z - 1
-        print(S + " | ")
-        if r_fact == 3:
-            print("   " + S)
-    return Z
+        print("Multiplication answer: " + str(multiply()))
 
-
-print("")
-looping(" ")
-print("")
-looping_2(" ")
+except ValueError:
+    print("Entered value is wrong!")
